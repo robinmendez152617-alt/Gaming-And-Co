@@ -5,6 +5,13 @@
     button.replaceWith(freshButton);
     return freshButton;
   });
+  const seriesCounter = document.querySelector('#quest-series') || (() => {
+    const label = document.createElement('span');
+    label.className = 'quest-series-label';
+    label.innerHTML = 'SÉRIE <b>01</b>';
+    document.querySelector('.quest-level-top').append(label);
+    return label.querySelector('b');
+  })();
   const questStorageKey = 'gaming-co-quest-progress';
   const questRounds = [
     [
@@ -67,7 +74,7 @@
     document.querySelector('.quest-emblem').textContent = rank.emblem;
     document.querySelector('#quest-level').textContent = String(level).padStart(2, '0');
     document.querySelector('#quest-rank-name').textContent = rank.name;
-    document.querySelector('#quest-series').textContent = String(progress.round + 1).padStart(2, '0');
+    seriesCounter.textContent = String(progress.round + 1).padStart(2, '0');
     document.querySelector('#quest-current-xp').textContent = levelXp + ' XP';
     document.querySelector('#quest-next-xp').textContent = '100 XP';
     document.querySelector('#quest-total-xp').textContent = progress.xp + ' XP au total';
