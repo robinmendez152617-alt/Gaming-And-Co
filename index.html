@@ -15,8 +15,8 @@
   <meta property="og:description" content="Des jeux à découvrir, des codes à copier et des guides pour ta prochaine partie.">
   <meta property="og:url" content="https://robinmendez152617-alt.github.io/Gaming-And-Co/">
   <title>Gaming &amp; Co — Le coin des gamers</title>
-    <link rel="stylesheet" href="style.css?v=6">
-    <script src="script.js?v=6" defer></script>
+        <link rel="stylesheet" href="style.css?v=7">
+        <script src="script.js?v=7" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -141,11 +141,39 @@
         </article>
       </div>
     </section>
+        <section class="radar-section" id="tendances" aria-labelledby="radar-title">
+      <div class="radar-heading"><div><div class="eyebrow"><span class="live-dot"></span> LE RADAR GAMING</div><h2 id="radar-title">Ce qui bouge <span>en ce moment.</span></h2></div><p>Des idées pour ta prochaine partie, que tu joues en solo ou avec tes amis.</p></div>
+      <div class="radar-shell">
+        <div class="radar-tabs" role="tablist" aria-label="Explorer les tendances gaming">
+          <button class="radar-tab is-active" id="tab-tendances" type="button" role="tab" aria-selected="true" aria-controls="panel-tendances" data-radar-tab="tendances"><span>◉</span> Jeux du moment</button>
+          <button class="radar-tab" id="tab-a-decouvrir" type="button" role="tab" aria-selected="false" aria-controls="panel-a-decouvrir" data-radar-tab="a-decouvrir" tabindex="-1"><span>✦</span> À découvrir</button>
+          <button class="radar-tab" id="tab-guides" type="button" role="tab" aria-selected="false" aria-controls="panel-guides" data-radar-tab="guides" tabindex="-1"><span>⌁</span> Guides rapides</button>
+        </div>
+        <div class="radar-panel" id="panel-tendances" role="tabpanel" aria-labelledby="tab-tendances" data-radar-panel="tendances">
+          <a class="radar-card radar-valorant" href="#jeux"><span class="radar-symbol">V</span><span class="radar-info"><small>TACTIQUE · EN ÉQUIPE</small><b>Valorant</b><span>Coordination et précision</span></span><span class="radar-tag">EN ÉQUIPE <i>↗</i></span></a>
+          <a class="radar-card radar-minecraft" href="#jeux"><span class="radar-symbol">▧</span><span class="radar-info"><small>AVENTURE · CRÉATION</small><b>Minecraft</b><span>Construis ton prochain monde</span></span><span class="radar-tag">CRÉATIF <i>↗</i></span></a>
+          <a class="radar-card radar-fortnite" href="#jeux"><span class="radar-symbol">✦</span><span class="radar-info"><small>ACTION · DÉFIS</small><b>Fortnite</b><span>Choisis un mode et lance-toi</span></span><span class="radar-tag">À JOUER <i>↗</i></span></a>
+        </div>
+        <div class="radar-panel" id="panel-a-decouvrir" role="tabpanel" aria-labelledby="tab-a-decouvrir" data-radar-panel="a-decouvrir" hidden>
+          <a class="radar-card radar-rocket" href="#jeux"><span class="radar-symbol">◎</span><span class="radar-info"><small>SPORT · VOITURES</small><b>Rocket League</b><span>Un match rapide entre amis</span></span><span class="radar-tag">DÉCOUVRIR <i>↗</i></span></a>
+          <a class="radar-card radar-stardew" href="#jeux"><span class="radar-symbol">✿</span><span class="radar-info"><small>AVENTURE · DÉTENTE</small><b>Stardew Valley</b><span>Prends ton temps à la ferme</span></span><span class="radar-tag">ZEN <i>↗</i></span></a>
+          <a class="radar-card radar-overcooked" href="#jeux"><span class="radar-symbol">♨</span><span class="radar-info"><small>COOP · CUISINE</small><b>Overcooked! 2</b><span>La cuisine devient un défi</span></span><span class="radar-tag">COOP <i>↗</i></span></a>
+        </div>
+        <div class="radar-panel radar-guides-panel" id="panel-guides" role="tabpanel" aria-labelledby="tab-guides" data-radar-panel="guides" hidden>
+          <a class="radar-guide" href="#actualites"><span>01</span><b>Bien choisir son prochain jeu</b><i>Lire le guide ↗</i></a>
+          <a class="radar-guide" href="#actualites"><span>02</span><b>Jouer en équipe sans se prendre la tête</b><i>Lire le guide ↗</i></a>
+          <a class="radar-guide" href="#actualites"><span>03</span><b>Garder ses infos privées en ligne</b><i>Lire le guide ↗</i></a>
+        </div>
+        <div class="radar-footer"><span><i></i> MISE À JOUR : SÉLECTION GAMING &amp; CO</span><a href="#jeux">Voir toutes les fiches <b>↗</b></a></div>
+      </div>
+    </section>
     <section class="join-section"><div class="join-mark">G<span>+</span></div><div><div class="eyebrow">C’EST TON UNIVERS</div><h2>La prochaine partie <span>commence ici.</span></h2></div><a class="button button-primary" href="#accueil">Retour à l’accueil <span>↑</span></a></section>
   </main>
   <footer class="site-footer"><a class="brand footer-brand" href="#accueil"><span class="brand-mark">G<span>+</span></span><span>GAMING <b>&amp; CO</b></span></a><p>Un petit coin pour les grands moments gaming.</p><span class="footer-copy">© <span id="current-year">2026</span> GAMING &amp; CO · SITE DE DÉMONSTRATION</span></footer>
   <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Fermer">×</button><div class="dialog-kicker" id="dialog-kicker">GAMING &amp; CO</div><h2 id="dialog-title"></h2><div class="dialog-content" id="dialog-content"></div><div class="dialog-actions"><button class="button button-primary dialog-done" type="button">Compris <span>✓</span></button></div></dialog>
   <dialog class="trailer-dialog" id="trailer-dialog" aria-labelledby="trailer-title"><button class="dialog-close trailer-close" type="button" aria-label="Fermer le trailer">×</button><div class="dialog-kicker">BANDE-ANNONCE OFFICIELLE</div><h2 id="trailer-title"></h2><div class="trailer-frame"><iframe id="trailer-frame" title="Trailer du jeu" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="trailer-caption">La vidéo est hébergée sur YouTube. Tu peux aussi la regarder en plein écran.</p></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true"><span></span></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 </body>
 </html>
