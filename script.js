@@ -209,5 +209,14 @@ const sectionObserver = new IntersectionObserver(entries => {
 sections.forEach(section => sectionObserver.observe(section));
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
+document.querySelectorAll('[data-release-date]').forEach(badge => {
+  const [year, month, day] = badge.dataset.releaseDate.split('-').map(Number);
+  const releaseDay = new Date(year, month - 1, day);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const days = Math.round((releaseDay - today) / 86400000);
+  badge.textContent = days > 1 ? `Dans ${days} jours` : days === 1 ? 'Demain' : days === 0 ? 'Aujourd’hui' : `Sorti depuis ${Math.abs(days)} j`;
+  badge.setAttribute('aria-label', badge.textContent);
+});
 saveFavorites();
 renderGames();

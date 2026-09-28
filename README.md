@@ -18,9 +18,10 @@ Un petit site gaming en français, au design sombre et violet. Il fonctionne dir
 - rechercher un jeu et filtrer par genre ;
 - garder tes favoris sur cet appareil ;
 - lire trois petits guides ;
+- consulter les sorties annoncées avec des liens vers les éditeurs ;
 - copier les exemples de codes.
 
-Les codes sont fictifs et les actualités sont des contenus de démonstration. Les favoris restent enregistrés dans le navigateur utilisé.
+Les codes sont fictifs et les actualités sont des contenus de démonstration. Les dates de sortie sont celles annoncées par les éditeurs et peuvent changer. Les favoris restent enregistrés dans le navigateur utilisé.
 
 ## Les fichiers
 

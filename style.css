@@ -31,6 +31,26 @@
 .toast{position:fixed;z-index:50;left:50%;bottom:24px;transform:translate(-50%,16px);background:#f1eaff;color:#24172f;border:1px solid #c9b2ec;border-radius:999px;padding:11px 18px;font-size:11px;font-weight:700;box-shadow:0 10px 40px #0008;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:640px){.results-count{font-size:10px}.filter-bar{gap:7px;margin-bottom:18px}.filter-chip{padding:7px 10px;font-size:9px}.section-caption{max-width:135px;font-size:9px}.code-item{flex-wrap:wrap}.code-item>div:nth-child(2){min-width:calc(100% - 60px)}.copy-button{margin-left:46px}.demo-badge{margin-left:auto}.detail-dialog{padding:29px 22px}.game-meta{align-items:flex-start}.details-button{font-size:9px}}
 
+.releases-section{background:linear-gradient(180deg,#100d17 0%,#0b0912 100%);border-top:1px solid #211b2b}
+.release-intro{margin:-9px 0 28px;color:var(--muted);font-size:13px;line-height:1.7}
+.release-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.release-card{min-height:250px;padding:21px;border:1px solid #2a2437;border-radius:10px;background:linear-gradient(150deg,#191423,#111019 72%);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.release-card:hover{transform:translateY(-3px);border-color:#70549a}
+.release-card:before{content:'';position:absolute;width:155px;height:155px;border-radius:50%;right:-65px;top:-75px;background:#a170ff1a;filter:blur(5px);pointer-events:none}
+.release-top{display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative}
+.release-kind{font:600 8px var(--display);letter-spacing:.13em;color:#bba3de}
+.release-countdown{font:600 9px var(--display);color:#dfc7ff;background:#342345;border:1px solid #654c81;border-radius:20px;padding:6px 9px;white-space:nowrap}
+.release-card h3{font:600 19px/1.3 var(--display);letter-spacing:-.025em;margin:21px 0 9px;position:relative}
+.release-card>p{font-size:11px;line-height:1.7;color:#a59eae;margin:0 0 18px;flex:1}
+.release-details{display:grid;gap:6px;border-top:1px solid #2c2735;padding-top:13px}
+.release-details time{font:600 11px var(--display);color:#eee8f7}
+.release-details span{font-size:9px;color:#8f879b}
+.release-source{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;margin-top:14px;font-size:10px;color:#c4a5ff}
+.release-source:hover{text-decoration:underline}
+.release-note{margin:20px 0 0;color:#817a8c;font-size:10px;line-height:1.7}
+@media(max-width:900px){.release-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.release-grid{grid-template-columns:1fr;gap:12px}.release-card{min-height:unset;padding:18px}.release-card h3{font-size:18px;margin-top:18px}.release-intro{font-size:12px}.release-note{font-size:9px}}
+
 /* Les fiches et les guides s’ouvrent directement en touchant leur carte. */
 .game-card{cursor:pointer}
 .game-title-button{display:inline;border:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;padding:0}
