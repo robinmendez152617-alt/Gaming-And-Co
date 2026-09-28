@@ -15,15 +15,15 @@
   <meta property="og:description" content="Des jeux à découvrir, des codes à copier et des guides pour ta prochaine partie.">
   <meta property="og:url" content="https://robinmendez152617-alt.github.io/Gaming-And-Co/">
   <title>Gaming &amp; Co — Le coin des gamers</title>
-        <link rel="stylesheet" href="style.css?v=8">
-        <script src="script.js?v=8" defer></script>
+        <link rel="stylesheet" href="style.css?v=9">
+        <script src="script.js?v=9" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#accueil" aria-label="Gaming & Co, accueil"><span class="brand-mark">G<span>+</span></span><span>GAMING <b>&amp; CO</b></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
-      <a class="nav-link active" href="#accueil">Accueil</a><a class="nav-link" href="#jeux">Jeux</a><a class="nav-link" href="#sorties">Sorties</a><a class="nav-link" href="#codes">Codes</a><a class="nav-link" href="#actualites">Actualités</a>
+      <a class="nav-link active" href="#accueil">Accueil</a><a class="nav-link" href="#jeux">Jeux</a><a class="nav-link" href="#sorties">Sorties</a><a class="nav-link" href="#quetes">Quêtes</a><a class="nav-link" href="#codes">Codes</a><a class="nav-link" href="#actualites">Actualités</a>
     </nav>
     <a class="header-cta" href="#jeux">Explorer <span aria-hidden="true">↗</span></a>
   </header>
@@ -141,7 +141,25 @@
         </article>
       </div>
     </section>
-        <section class="radar-section" id="tendances" aria-labelledby="radar-title">
+        <section class="quest-section" id="quetes" aria-labelledby="quest-title">
+  <div class="quest-heading"><div><div class="eyebrow"><span class="live-dot"></span> PETITES MISSIONS, GRAND LEVEL UP</div><h2 id="quest-title">Tes prochaines <span>quêtes.</span></h2></div><p>Accomplis des missions sur le site, gagne de l’XP et fais monter ton niveau.</p></div>
+  <div class="quest-dashboard">
+    <article class="quest-level-card">
+      <div class="quest-level-top"><span class="quest-emblem">✦</span><span class="quest-level-label">NIVEAU <b id="quest-level">01</b></span></div>
+      <div class="quest-profile-label">TON PROFIL DE JOUEUR</div><h3 id="quest-rank-name">Rookie</h3>
+      <div class="quest-xp-labels"><b id="quest-current-xp">0 XP</b><span><strong id="quest-next-xp">100 XP</strong> pour le niveau suivant</span></div>
+      <div class="quest-progress" role="progressbar" aria-label="Progression vers le niveau suivant" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="quest-progress-fill"></span></div>
+      <div class="quest-level-foot"><span id="quest-total-xp">0 XP au total</span><span id="quest-completed-count">0 / 3 missions</span></div>
+      <p class="quest-save-note">Ta progression est gardée sur cet appareil.</p>
+    </article>
+    <div class="quest-list" aria-label="Missions Gaming &amp; Co">
+      <article class="quest-card" data-quest-card="fiche"><span class="quest-index">01</span><div class="quest-description"><small>EXPLORATION</small><b>Découvre une fiche de jeu</b><p>Choisis un jeu et lis sa description.</p></div><button class="quest-complete" type="button" data-quest="fiche" data-xp="30">Valider <span>+30 XP</span></button></article>
+      <article class="quest-card" data-quest-card="guide"><span class="quest-index">02</span><div class="quest-description"><small>CONSEILS</small><b>Lis un guide gaming</b><p>Récupère une astuce pour ta prochaine partie.</p></div><button class="quest-complete" type="button" data-quest="guide" data-xp="25">Valider <span>+25 XP</span></button></article>
+      <article class="quest-card" data-quest-card="favori"><span class="quest-index">03</span><div class="quest-description"><small>COLLECTION</small><b>Choisis ton jeu favori</b><p>Ajoute un jeu à tes favoris.</p></div><button class="quest-complete" type="button" data-quest="favori" data-xp="45">Valider <span>+45 XP</span></button></article>
+    </div>
+  </div>
+</section>
+<section class="radar-section" id="tendances" aria-labelledby="radar-title">
       <div class="radar-heading"><div><div class="eyebrow"><span class="live-dot"></span> LE RADAR GAMING</div><h2 id="radar-title">Ce qui bouge <span>en ce moment.</span></h2></div><p>Des idées pour ta prochaine partie, que tu joues en solo ou avec tes amis.</p></div>
       <div class="radar-shell">
         <div class="radar-tabs" role="tablist" aria-label="Explorer les tendances gaming">
