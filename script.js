@@ -298,3 +298,55 @@ function updateScrollProgress() {
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 window.addEventListener('resize', updateScrollProgress, { passive: true });
 updateScrollProgress();
+
+
+const questButtons = [...document.querySelectorAll('[data-quest]')];
+const questStorageKey = 'gaming-co-quest-progress';
+const validQuestIds = new Set(questButtons.map(button => button.dataset.quest));
+function readQuestProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(questStorageKey) || '{}');
+    const completed = Array.isArray(saved.completed) ? [...new Set(saved.completed.filter(id => validQuestIds.has(id)))] : [];
+    const earned = questButtons.reduce((sum, button) => completed.includes(button.dataset.quest) ? sum + Number(button.dataset.xp || 0) : sum, 0);
+    return { xp: earned, completed };
+  } catch {
+    return { xp: 0, completed: [] };
+  }
+}
+let questProgress = readQuestProgress();
+function renderQuestProgress() {
+  const level = Math.floor(questProgress.xp / 100) + 1;
+  const levelXp = questProgress.xp % 100;
+  const ranks = ['Rookie', 'Explorateur', 'Stratège', 'As du gamepad', 'Légende'];
+  document.querySelector('#quest-level').textContent = String(level).padStart(2, '0');
+  document.querySelector('#quest-rank-name').textContent = ranks[Math.min(level - 1, ranks.length - 1)];
+  document.querySelector('#quest-current-xp').textContent = levelXp + ' XP';
+  document.querySelector('#quest-next-xp').textContent = '100 XP';
+  document.querySelector('#quest-total-xp').textContent = questProgress.xp + ' XP au total';
+  document.querySelector('#quest-completed-count').textContent = questProgress.completed.length + ' / ' + questButtons.length + ' missions';
+  const progressBar = document.querySelector('.quest-progress');
+  progressBar.setAttribute('aria-valuenow', String(levelXp));
+  document.querySelector('#quest-progress-fill').style.width = levelXp + '%';
+  questButtons.forEach(button => {
+    const complete = questProgress.completed.includes(button.dataset.quest);
+    const card = button.closest('[data-quest-card]');
+    card.classList.toggle('is-complete', complete);
+    button.disabled = complete;
+    button.innerHTML = complete ? 'Mission validée <span>✓</span>' : 'Valider <span>+' + button.dataset.xp + ' XP</span>';
+    button.setAttribute('aria-label', complete ? 'Mission validée' : 'Valider cette mission pour ' + button.dataset.xp + ' points XP');
+  });
+}
+questButtons.forEach(button => button.addEventListener('click', () => {
+  if (questProgress.completed.includes(button.dataset.quest)) return;
+  const points = Number(button.dataset.xp || 0);
+  questProgress.completed.push(button.dataset.quest);
+  questProgress.xp += points;
+  try {
+    localStorage.setItem(questStorageKey, JSON.stringify(questProgress));
+  } catch {
+    showToast('Mission réussie ! La progression reste pour cette visite.');
+  }
+  renderQuestProgress();
+  showToast('Mission réussie : +' + points + ' XP !');
+}));
+renderQuestProgress();
