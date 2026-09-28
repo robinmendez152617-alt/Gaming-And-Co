@@ -26,6 +26,10 @@ const dialogTitle = document.querySelector('#dialog-title');
 const dialogKicker = document.querySelector('#dialog-kicker');
 const dialogContent = document.querySelector('#dialog-content');
 const toast = document.querySelector('#toast');
+const releaseGrid = document.querySelector('.release-grid');
+const trailerDialog = document.querySelector('#trailer-dialog');
+const trailerFrame = document.querySelector('#trailer-frame');
+const trailerTitle = document.querySelector('#trailer-title');
 let activeFilter = 'Tout';
 let toastTimer;
 
@@ -160,6 +164,20 @@ newsGrid.addEventListener('keydown', event => {
   if (!card || (event.key !== 'Enter' && event.key !== ' ')) return;
   event.preventDefault();
   openArticleCard(card);
+});
+
+releaseGrid.addEventListener('click', event => {
+  const button = event.target.closest('[data-trailer]');
+  if (!button) return;
+  trailerTitle.textContent = button.dataset.trailerTitle;
+  trailerFrame.title = `Trailer officiel de ${button.dataset.trailerTitle}`;
+  trailerFrame.src = `https://www.youtube-nocookie.com/embed/${button.dataset.trailer}?autoplay=1&rel=0`;
+  trailerDialog.showModal();
+});
+trailerDialog.querySelector('.trailer-close').addEventListener('click', () => trailerDialog.close());
+trailerDialog.addEventListener('close', () => { trailerFrame.src = ''; });
+trailerDialog.addEventListener('click', event => {
+  if (event.target === trailerDialog) trailerDialog.close();
 });
 
 dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());

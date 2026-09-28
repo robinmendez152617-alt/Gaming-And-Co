@@ -40,6 +40,18 @@
 .release-top{display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative}
 .release-kind{font:600 8px var(--display);letter-spacing:.13em;color:#bba3de}
 .release-countdown{font:600 9px var(--display);color:#dfc7ff;background:#342345;border:1px solid #654c81;border-radius:20px;padding:6px 9px;white-space:nowrap}
+.release-rating-warning{align-self:flex-start;margin:-6px 0 14px;border:1px solid #865547;background:#38221f;color:#ffcfb8;border-radius:5px;padding:7px 9px;font:700 9px var(--display);letter-spacing:.04em}
+.trailer-button{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;margin-top:15px;padding:9px 12px;border:1px solid #74539d;border-radius:6px;background:#2a1d39;color:#e7d7ff;font:600 10px var(--font);cursor:pointer;transition:background .2s,transform .2s}
+.trailer-button:hover{background:#3a2850;transform:translateY(-1px)}
+.trailer-button span{font-size:9px;color:#c5a4ff}
+.trailer-dialog{width:min(850px,calc(100% - 28px));max-width:none;padding:30px;border:1px solid #4f3d68;border-radius:14px;background:linear-gradient(145deg,#1c1727,#100d17);color:var(--text);box-shadow:0 24px 100px #000b}
+.trailer-dialog::backdrop{background:#08060dcc;backdrop-filter:blur(5px)}
+.trailer-dialog h2{font:600 clamp(23px,4vw,34px)/1.15 var(--display);letter-spacing:-.04em;margin:13px 40px 18px 0}
+.trailer-frame{width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid #40364e;border-radius:9px;background:#08070c}
+.trailer-frame iframe{display:block;width:100%;height:100%;border:0}
+.trailer-caption{margin:12px 0 0;color:#898293;font-size:10px;line-height:1.6}
+.trailer-close{z-index:1}
+@media(max-width:640px){.trailer-dialog{padding:25px 16px}.trailer-dialog h2{margin-right:35px}.trailer-frame{border-radius:6px}}
 .release-card h3{font:600 19px/1.3 var(--display);letter-spacing:-.025em;margin:21px 0 9px;position:relative}
 .release-card>p{font-size:11px;line-height:1.7;color:#a59eae;margin:0 0 18px;flex:1}
 .release-details{display:grid;gap:6px;border-top:1px solid #2c2735;padding-top:13px}
