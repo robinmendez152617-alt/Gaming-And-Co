@@ -11,6 +11,7 @@
 .filter-chip:hover{border-color:#8063ae;color:#f5efff}.filter-chip.selected{background:#302345;border-color:#8d68cb;color:#fff}
 .filter-chip span{display:inline-grid;place-items:center;min-width:17px;height:17px;margin-left:5px;border-radius:50%;background:#ffffff16;font-size:9px}
 .game-art{isolation:isolate}.game-art:before{animation:orbit-drift 18s linear infinite}.game-card:hover .game-art:after{transform:scale(1.2);transition:transform .35s ease}
+@media(prefers-reduced-motion:reduce){.game-art:before{animation:none}}
 @keyframes orbit-drift{to{transform:rotate(395deg)}}
 .art-roblox{background:radial-gradient(ellipse at 64% 32%,#ff9e6645,transparent 45%),linear-gradient(140deg,#442b26,#17121c)}
 .art-fallguys{background:radial-gradient(ellipse at 48% 42%,#ff81c452,transparent 48%),linear-gradient(140deg,#482449,#171427)}
