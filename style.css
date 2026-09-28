@@ -30,3 +30,13 @@
 .dialog-kicker{color:#b797ff;font:600 9px var(--display);letter-spacing:.16em;padding-right:35px}.detail-dialog h2{font:600 clamp(25px,5vw,36px)/1.1 var(--display);letter-spacing:-.04em;margin:14px 0 18px}.dialog-content p{color:#b4adbf;font-size:13px;line-height:1.8;margin:0 0 13px}.dialog-actions{border-top:1px solid #302a39;margin-top:24px;padding-top:18px}.dialog-done{border:0;cursor:pointer}
 .toast{position:fixed;z-index:50;left:50%;bottom:24px;transform:translate(-50%,16px);background:#f1eaff;color:#24172f;border:1px solid #c9b2ec;border-radius:999px;padding:11px 18px;font-size:11px;font-weight:700;box-shadow:0 10px 40px #0008;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:640px){.results-count{font-size:10px}.filter-bar{gap:7px;margin-bottom:18px}.filter-chip{padding:7px 10px;font-size:9px}.section-caption{max-width:135px;font-size:9px}.code-item{flex-wrap:wrap}.code-item>div:nth-child(2){min-width:calc(100% - 60px)}.copy-button{margin-left:46px}.demo-badge{margin-left:auto}.detail-dialog{padding:29px 22px}.game-meta{align-items:flex-start}.details-button{font-size:9px}}
+
+/* Les fiches et les guides s’ouvrent directement en touchant leur carte. */
+.game-card{cursor:pointer}
+.game-title-button{display:inline;border:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;padding:0}
+.game-title-button:hover{color:#c4a0ff}
+.news-card{cursor:pointer;transition:transform .2s,border-color .2s}
+.news-card:hover{transform:translateY(-4px);border-color:#68508d}
+.news-card:focus-visible{outline:2px solid #c4a0ff;outline-offset:4px}
+.news-open-hint{margin:16px 17px 0;color:#c3a8f5;font-size:10px;font-weight:600}
+.news-open-hint span{margin-left:6px;color:#d7c2ff}
