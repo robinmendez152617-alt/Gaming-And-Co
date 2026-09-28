@@ -238,3 +238,63 @@ document.querySelectorAll('[data-release-date]').forEach(badge => {
 });
 saveFavorites();
 renderGames();
+
+
+const radarTabs = [...document.querySelectorAll('[data-radar-tab]')];
+const radarPanels = [...document.querySelectorAll('[data-radar-panel]')];
+function activateRadarTab(tab, moveFocus = false) {
+  const selectedId = tab.dataset.radarTab;
+  radarTabs.forEach(item => {
+    const selected = item === tab;
+    item.classList.toggle('is-active', selected);
+    item.setAttribute('aria-selected', String(selected));
+    item.tabIndex = selected ? 0 : -1;
+  });
+  radarPanels.forEach(panel => { panel.hidden = panel.dataset.radarPanel !== selectedId; });
+  if (moveFocus) tab.focus();
+}
+radarTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => activateRadarTab(tab));
+  tab.addEventListener('keydown', event => {
+    let nextIndex = index;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % radarTabs.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + radarTabs.length) % radarTabs.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = radarTabs.length - 1;
+    else return;
+    event.preventDefault();
+    activateRadarTab(radarTabs[nextIndex], true);
+  });
+});
+
+const customCursor = document.querySelector('#custom-cursor');
+if (window.matchMedia('(pointer: fine)').matches && customCursor) {
+  document.body.classList.add('has-custom-cursor');
+  const updateCursor = event => {
+    customCursor.style.left = `${event.clientX}px`;
+    customCursor.style.top = `${event.clientY}px`;
+    customCursor.classList.add('is-visible');
+    customCursor.classList.toggle('is-hovering', Boolean(event.target.closest('a, button, input, [role="tab"]')));
+  };
+  window.addEventListener('pointermove', updateCursor, { passive: true });
+  document.addEventListener('pointerover', updateCursor, { passive: true });
+  document.addEventListener('pointerout', event => {
+    if (!event.relatedTarget) customCursor.classList.remove('is-visible');
+  });
+  window.addEventListener('blur', () => customCursor.classList.remove('is-visible'));
+}
+
+const scrollProgress = document.querySelector('#scroll-progress');
+let progressFrame = 0;
+function updateScrollProgress() {
+  if (!scrollProgress || progressFrame) return;
+  progressFrame = window.requestAnimationFrame(() => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+    scrollProgress.style.setProperty('--scroll-progress', String(Math.max(0, Math.min(1, progress))));
+    progressFrame = 0;
+  });
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+window.addEventListener('resize', updateScrollProgress, { passive: true });
+updateScrollProgress();
