@@ -15,17 +15,18 @@
   <meta property="og:description" content="Des jeux à découvrir, des codes à copier et des guides pour ta prochaine partie.">
   <meta property="og:url" content="https://robinmendez152617-alt.github.io/Gaming-And-Co/">
   <title>Gaming &amp; Co — Le coin des gamers</title>
-        <link rel="stylesheet" href="style.css?v=12">
+        <link rel="stylesheet" href="style.css?v=13">
         <script src="script.js?v=10" defer></script>
   <script src="games-extra.js?v=1" defer></script>
   <script src="quest.js?v=1" defer></script>
+  <script src="community.js?v=1" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#accueil" aria-label="Gaming & Co, accueil"><span class="brand-mark">G<span>+</span></span><span>GAMING <b>&amp; CO</b></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
-      <a class="nav-link active" href="#accueil">Accueil</a><a class="nav-link" href="#jeux">Jeux</a><a class="nav-link" href="#sorties">Sorties</a><a class="nav-link" href="#quetes">Quêtes</a><a class="nav-link" href="#codes">Codes</a><a class="nav-link" href="#actualites">Actualités</a>
+      <a class="nav-link active" href="#accueil">Accueil</a><a class="nav-link" href="#jeux">Jeux</a><a class="nav-link" href="#sorties">Sorties</a><a class="nav-link" href="#quetes">Quêtes</a><a class="nav-link" href="#codes">Codes</a><a class="nav-link" href="#actualites">Actualités</a><a class="nav-link" href="#sondage">Sondage</a><a class="nav-link" href="#collaboration">Collaboration</a>
     </nav>
     <a class="header-cta" href="#jeux">Explorer <span aria-hidden="true">↗</span></a>
   </header>
@@ -187,7 +188,40 @@
         <div class="radar-footer"><span><i></i> MISE À JOUR : SÉLECTION GAMING &amp; CO</span><a href="#jeux">Voir toutes les fiches <b>↗</b></a></div>
       </div>
     </section>
-    <section class="join-section"><div class="join-mark">G<span>+</span></div><div><div class="eyebrow">C’EST TON UNIVERS</div><h2>La prochaine partie <span>commence ici.</span></h2></div><a class="button button-primary" href="#accueil">Retour à l’accueil <span>↑</span></a></section>
+    <section class="community-section" id="sondage" aria-labelledby="poll-title">
+  <div class="community-heading"><div><div class="eyebrow"><span class="live-dot"></span> À TOI DE CHOISIR</div><h2 id="poll-title">Le prochain jeu à <span>découvrir ?</span></h2></div><p>Vote pour le jeu que tu aimerais voir dans une prochaine fiche Gaming &amp; Co.</p></div>
+  <div class="community-grid">
+    <form class="community-card poll-card" id="poll-form">
+      <fieldset><legend>Quel jeu tu choisis ?</legend>
+        <label class="poll-option"><input type="radio" name="game-poll" value="zelda-echoes" required><span class="poll-icon">◇</span><span><b>Zelda: Echoes of Wisdom</b><small>Énigmes et exploration</small></span></label>
+        <label class="poll-option"><input type="radio" name="game-poll" value="mario-kart-world"><span class="poll-icon">🏁</span><span><b>Mario Kart World</b><small>Course et découverte</small></span></label>
+        <label class="poll-option"><input type="radio" name="game-poll" value="kirby"><span class="poll-icon">✦</span><span><b>Kirby et le monde oublié</b><small>Aventure et plateforme</small></span></label>
+        <label class="poll-option"><input type="radio" name="game-poll" value="donkey-kong"><span class="poll-icon">▰</span><span><b>Donkey Kong Bananza</b><small>Action et exploration</small></span></label>
+      </fieldset>
+      <button class="button button-primary poll-submit" type="submit">Enregistrer mon vote <span>→</span></button>
+      <p class="local-only-note">Les votes restent sur cet appareil et ne sont pas partagés avec les autres visiteurs.</p>
+      <div class="poll-results" id="poll-results" aria-live="polite" hidden></div>
+      <p class="community-feedback" id="poll-feedback" role="status" aria-live="polite"></p>
+    </form>
+    <aside class="community-side-card"><div class="community-side-icon">✦</div><div class="eyebrow">PROCHAINE MISSION</div><h3>Ton idée peut inspirer le site.</h3><p>Propose un jeu, un guide ou une rubrique. N’écris pas ton nom complet, ton adresse e-mail, ton école ou d’autres informations personnelles.</p><a class="button button-light" href="#collaboration">Partager une idée <span>↓</span></a></aside>
+  </div>
+</section>
+<section class="community-section collaboration-section" id="collaboration" aria-labelledby="collaboration-title">
+  <div class="community-heading"><div><div class="eyebrow">LE STUDIO DES IDÉES</div><h2 id="collaboration-title">Construisons le site <span>ensemble.</span></h2></div><p>Note une idée à garder pour Gaming &amp; Co : un jeu, un guide ou une nouvelle fonction.</p></div>
+  <div class="community-grid collaboration-grid">
+    <form class="community-card idea-form" id="idea-form">
+      <label for="idea-type">Quel genre d’idée ?</label><select id="idea-type" name="type"><option>Une fiche de jeu</option><option>Un guide ou une astuce</option><option>Une nouvelle rubrique</option><option>Une amélioration du site</option></select>
+      <label for="idea-title">Le titre de ton idée</label><input id="idea-title" name="title" type="text" maxlength="60" placeholder="Ex. Une fiche sur Kirby" required>
+      <label for="idea-details">Explique ton idée</label><textarea id="idea-details" name="details" rows="4" maxlength="240" placeholder="Qu’aimerais-tu voir sur le site ?" required></textarea>
+      <div class="idea-form-bottom"><small>Pas besoin de donner ton nom. 240 caractères maximum.</small><button class="button button-primary" type="submit">Garder mon idée <span>＋</span></button></div>
+      <p class="local-only-note">L’idée est enregistrée sur ce navigateur uniquement. Ne note pas d’informations personnelles.</p>
+      <p class="community-feedback" id="idea-feedback" role="status" aria-live="polite"></p>
+    </form>
+    <div class="community-card ideas-card"><div class="ideas-heading"><div><div class="eyebrow">TON CARNET</div><h3>Mes idées gardées</h3></div><span class="idea-count" id="idea-count">0 / 10</span></div><div class="saved-ideas" id="saved-ideas" aria-live="polite"></div></div>
+  </div>
+</section>
+
+<section class="join-section"><div class="join-mark">G<span>+</span></div><div><div class="eyebrow">C’EST TON UNIVERS</div><h2>La prochaine partie <span>commence ici.</span></h2></div><a class="button button-primary" href="#accueil">Retour à l’accueil <span>↑</span></a></section>
   </main>
   <footer class="site-footer"><a class="brand footer-brand" href="#accueil"><span class="brand-mark">G<span>+</span></span><span>GAMING <b>&amp; CO</b></span></a><p>Un petit coin pour les grands moments gaming.</p><span class="footer-copy">© <span id="current-year">2026</span> GAMING &amp; CO · SITE DE DÉMONSTRATION</span></footer>
   <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Fermer">×</button><div class="dialog-kicker" id="dialog-kicker">GAMING &amp; CO</div><h2 id="dialog-title"></h2><div class="dialog-content" id="dialog-content"></div><div class="dialog-actions"><button class="button button-primary dialog-done" type="button">Compris <span>✓</span></button></div></dialog>
