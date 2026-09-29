@@ -116,3 +116,22 @@
 .quest-progress{height:9px;overflow:hidden;border:1px solid #3d324c;border-radius:99px;background:#0c0a11}.quest-progress span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--rank-accent),#c183ff,#73d8e4);box-shadow:0 0 12px var(--rank-glow);transition:width .45s cubic-bezier(.2,.7,.2,1),background .4s}
 @media(max-width:380px){.quest-level-top{gap:6px}.quest-emblem{width:36px;height:36px}.quest-series-label{padding:6px;font-size:7px}.quest-level-label{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.quest-level-card,.quest-emblem,.quest-level-card h3{transition:none}.quest-level-card.is-leveling{animation:none}}
+
+  
+/* Navigation violette et identités visuelles des nouveaux jeux */
+.main-nav{gap:4px;padding:6px 7px;border:1px solid #9d70ff48;border-radius:999px;background:linear-gradient(110deg,#7342bd24,#a16dff12);box-shadow:inset 0 1px #ffffff09,0 5px 22px #6c43a41a}
+.nav-link{padding:9px 12px;border:1px solid transparent;border-radius:999px;color:#c0b6ce;font-size:11px;white-space:nowrap;transition:color .2s,background .2s,border-color .2s,box-shadow .2s}
+.nav-link:hover,.nav-link.active{color:#fff;border-color:#c7a6ff72;background:linear-gradient(120deg,#8053d5,#603caa);box-shadow:0 4px 16px #8654df55}
+.nav-link.active:after{display:none}
+.art-zelda{background:radial-gradient(ellipse at 50% 45%,#b1dc7a54,transparent 45%),linear-gradient(140deg,#293f31,#151a1c 70%,#362c20)}
+.art-mariokart{background:radial-gradient(ellipse at 52% 47%,#ffd16b53,transparent 45%),linear-gradient(140deg,#39365b,#181425 70%,#542d4c)}
+.art-mariowonder{background:radial-gradient(ellipse at 48% 48%,#ff8a7a50,transparent 44%),linear-gradient(140deg,#682d39,#25152a 72%,#3c2a5c)}
+.art-splatoon{background:radial-gradient(ellipse at 50% 45%,#97f26450,transparent 43%),linear-gradient(140deg,#164b4d,#1c1831 70%,#56305b)}
+.art-pokemon{background:radial-gradient(ellipse at 50% 46%,#ff866e50,transparent 42%),linear-gradient(140deg,#4e3248,#1e1934 68%,#493a70)}
+.art-amongus{background:radial-gradient(ellipse at 50% 45%,#eb777c50,transparent 44%),linear-gradient(140deg,#3f2439,#171522 68%,#273c55)}
+.art-gta{background:radial-gradient(ellipse at 55% 45%,#e99c7650,transparent 45%),linear-gradient(140deg,#443c51,#1b1727 68%,#4b3442)}
+.art-zelda .game-symbol{color:#d8f69b}.art-mariokart .game-symbol{color:#ffe28c}.art-mariowonder .game-symbol{color:#ffb3a8}.art-splatoon .game-symbol{color:#b8ff90}.art-pokemon .game-symbol{color:#ffc0a8}.art-amongus .game-symbol{color:#ffaaaa}.art-gta .game-symbol{color:#ffd5bc;font-size:36px;letter-spacing:-.05em}
+@media(max-width:900px){.main-nav{gap:2px;padding:5px}.nav-link{padding:8px 9px;font-size:10px}}
+@media(max-width:760px){.main-nav{gap:2px}.nav-link{padding:8px 7px;font-size:9px}}
+@media(max-width:640px){.main-nav{gap:5px;padding:14px 18px 18px;border:0;border-bottom:1px solid #9d70ff45;border-radius:0 0 18px 18px;background:linear-gradient(145deg,#171126,#100d18);box-shadow:0 15px 32px #0007}.nav-link{padding:11px 13px;border:1px solid #9d70ff35;border-radius:12px;background:#a274ff0a;color:#ddd1f0;font-size:12px}.nav-link:hover,.nav-link.active{border-color:#bd9aff;background:linear-gradient(115deg,#8053d5,#603caa);box-shadow:0 4px 16px #8654df36}}
+@media(prefers-reduced-motion:reduce){.nav-link{transition:none}}
